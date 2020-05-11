@@ -3,12 +3,12 @@ const handlers = require('../lib/handlers');
 
 module.exports = [
   {
-    cmd: 'kill',
+    cmd: ['k', 'kill'],
     description: 'Deletes all found module folders in specified paths.',
     handler: handlers.kill,
   },
   {
-    cmd: 'add',
+    cmd: ['a', 'add'],
     description: 'Adds a new search path for node modules.',
     handler: handlers.addNewPath,
     args: [
@@ -24,7 +24,7 @@ module.exports = [
     handler: handlers.displayHelp,
   },
   {
-    cmd: 'ignore',
+    cmd: ['i', 'ignore'],
     description: 'Add a string to ignore in search paths such as "src" or "public".',
     handler: handlers.addIgnoreText,
     args: [
@@ -35,7 +35,7 @@ module.exports = [
     ]
   },
   {
-    cmd: 'remove',
+    cmd: ['r', 'remove'],
     description: 'Removes a search path for node modules.',
     handler: handlers.removePath,
     args: [
@@ -46,7 +46,7 @@ module.exports = [
     ]
   },
   {
-    cmd: 'dontIgnore',
+    cmd: ['ri', 'removeIgnore'],
     description: 'Removes previously added ignore text from the list to ignore when searching node modules.',
     handler: handlers.removeIgnore,
     args: [
@@ -62,7 +62,7 @@ module.exports = [
     handler: handlers.resetConfig,
   },
   {
-    cmd: 'list',
+    cmd: ['l', 'li', 'list'],
     description: 'Lists all search paths and ignore paths currently saved.',
     handler: handlers.listAll,
   },
@@ -71,4 +71,9 @@ module.exports = [
     description: 'List current murdermod version.',
     handler: handlers.showVersion,
   },
+  {
+    cmd: ['u', 'update'],
+    description: 'Update murdermod',
+    handler: handlers.update,
+  }
 ]

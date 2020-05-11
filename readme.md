@@ -14,13 +14,16 @@ npm i murdermod -g
 | Name | Usage | Description |
 |:------------------|:------------|:----------------|
 | Help              | `help`      | Print help menu |
-| Kill              | `kill`      | Murders node modules |
-| Add              | `add`      | Add a path to search for modules in. |
-| Remove              | `remove`      | Remove an existing search path |
-| Ignore              | `ignore`      | Add text to ignore when searching for modules |
-| Dont Ignore              | `dontIgnore`      | Remove existing ignore text |
-| Reset Config?              | `resetConfig`      | Completely remove all saved configuration data. |
-| List              | `list`      | List all currently saved configuration data. |
+| Kill              | `[k, kill]`      | Murders node modules |
+| Add              | `[a, add]`      | Add a path to search for modules in. |
+| Remove              | `[r, remove]`      | Remove an existing search path |
+| Ignore              | `[i, ignore]`      | Add text to ignore when searching for modules |
+| Dont Ignore              | `[ri, removeIgnore]`      | Remove existing ignore text |
+| Reset Config              | `resetConfig`      | Completely remove all saved configuration data. |
+| List              | `[l, li, list]`      | List all currently saved configuration data. |
+| Version              | `[v, ver, version]`      | Display current version. |
+| Update              | `[u, update]`      | Update to current murdermod version. |
+
 
 ---
 
@@ -29,43 +32,50 @@ Get Help
 ```PowerShell
 murdermod
 ```
-```PowerShell
-murdermod help
-```
 
 Kill Node modules
 ```PowerShell
-murdermod kill
+murdermod k
 ```
 
 Add search path
 ```PowerShell
-murdermod add C:/Users/username/Projects
+murdermod a C:/Users/username/Projects
 ```
 
 Remove search path
 ```PowerShell
-murdermod remove C:/Users/username/Projects
+murdermod r C:/Users/username/Projects
 ```
 
 Add ignore text
 ```PowerShell
-murdermod ignore .git
+murdermod i .git
 ```
 
 Remove ignore text
 ```PowerShell
-murdermod dontIgnore src
+murdermod ri src
 ```
 
 List saved configuration
 ```PowerShell
-murdermod list
+murdermod l
 ```
 
 Remove saved configuration
 ```PowerShell
 murdermod resetConfig
+```
+
+Display version
+```PowerShell
+murdermod v
+```
+
+Update cli
+```PowerShell
+murdermod u
 ```
 
 ---
