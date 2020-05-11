@@ -75,5 +75,10 @@ module.exports = [
     cmd: ['u', 'update'],
     description: 'Update murdermod',
     handler: handlers.update,
+  },
+  {
+    cmd: ['c', 'check'],
+    description: 'Displays additional murdermod information',
+    handler: handlers.check,
   }
 ]

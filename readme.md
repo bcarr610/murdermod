@@ -23,6 +23,7 @@ npm i murdermod -g
 | List              | `[l, li, list]`      | List all currently saved configuration data. |
 | Version              | `[v, ver, version]`      | Display current version. |
 | Update              | `[u, update]`      | Update to current murdermod version. |
+| Check               | `[c, check]`       | Check module directories, displays how many can be cleaned and how much space they are occupying |
 
 
 ---
@@ -76,6 +77,11 @@ murdermod v
 Update cli
 ```PowerShell
 murdermod u
+```
+
+Check
+```PowerShell
+murdermod c
 ```
 
 ---
