@@ -1,0 +1,20 @@
+{
+  "name": "murdermod",
+  "version": "1.0.4",
+  "description": "CLI to remove node modules.",
+  "main": "index.js",
+  "bin": {
+    "murdermod": "./bin/index.js"
+  },
+  "scripts": {
+    "start": "node bin/index",
+    "li": "npm i %cd% -g"
+  },
+  "author": "Brandon Carr",
+  "license": "ISC",
+  "repository": "https://github.com/bcarr610/murdermod",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "jsonfile": "^6.0.1"
+  }
+}
