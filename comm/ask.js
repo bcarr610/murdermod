@@ -1,7 +1,6 @@
-'use strict';
 const process = require('process');
 const readline = require('readline');
-const colors = require('colors');
+const chalk = require('chalk');
 
 module.exports = (question, color = 'cyan') => new Promise(resolve => {
   const rl = readline.createInterface({
@@ -9,7 +8,7 @@ module.exports = (question, color = 'cyan') => new Promise(resolve => {
     output: process.stdout,
   });
 
-  rl.question(`${question}`[color], answer => {
+  rl.question(chalk[color](`${question} `), answer => {
     rl.close();
     resolve(answer);
   })

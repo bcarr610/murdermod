@@ -6,7 +6,8 @@
     "murdermod": "./bin/murdermod.js"
   },
   "scripts": {
-    "li": "npm i %cd% -g"
+    "li": "npm i %cd% -g",
+    "start": "node bin/murdermod.js"
   },
   "author": "Brandon Carr",
   "license": "ISC",
@@ -14,6 +15,8 @@
   "preferGlobal": true,
   "dependencies": {
     "chalk": "^4.0.0",
+    "cli-select": "^1.1.2",
+    "clui": "^0.3.6",
     "configstore": "^5.0.1",
     "jsonfile": "^6.0.1",
     "nodejs-fs-utils": "^1.2.5",

@@ -3,7 +3,7 @@
 
 const handlers = require('../handlers/murdermod');
 
-const argv = require('yargs')
+require('yargs')
   .usage('Usage: $0 <command> [options]')
   .command('add', 'Add new search/ignore criteria.', yargs => {
     return yargs
@@ -43,7 +43,7 @@ const argv = require('yargs')
         type: 'array',
       })
   }, handlers.remove)
-  .command(['list', 'li'], 'List stored search data.', yargs => {
+  .command(['list', 'li', 'l'], 'List stored search data.', yargs => {
     return yargs
       .example('$0 list')
       .option('paths', {
@@ -62,6 +62,24 @@ const argv = require('yargs')
         type: 'boolean',
       })
   }, handlers.list)
+  .command(['k', 'kill'], 'Delete node modules from search paths.', yargs => {
+    return yargs
+      .example('$0 kill')
+      .option('noPrompt', {
+        alias: 'n',
+        describe: 'Don\'t display prompts.',
+        type: 'boolean',
+      })
+      .option('snipe', {
+        alias: 's',
+        describe: 'Manually select modules to remove.',
+      })
+      .option('verbose', {
+        alias: 'v',
+        describe: 'Display verbose logs.',
+        type: 'boolean',
+      })
+  }, handlers.kill)
   .help('h')
   .alias('h', 'help')
   .argv

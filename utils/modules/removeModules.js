@@ -1,13 +1,11 @@
-'use strict';
-
 const path = require('path');
-const isDirectory = require('./isDirectory');
-const forEach = require('../async/forEach');
+const fsa = require('../fsa');
+const asyncList = require('../asyncList');
 const fs = require('fs').promises;
 
-module.exports = async (directories) => await forEach(directories, async dir => {
+module.exports = async (directories) => await asyncList.forEach(directories, async dir => {
   const resolved = path.resolve(dir);
-  const isDir = await isDirectory(resolved);
+  const isDir = await fsa.isDir(resolved);
   if (isDir) {
     return await fs.rmdir(path.resolve(resolved), { recursive: true });
   } else {

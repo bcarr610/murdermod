@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = pathLike => {
   if (pathLike.includes('/')) {
     return pathLike.split('/').includes('node_modules');
