@@ -80,38 +80,41 @@ module.exports = async argv => {
             }
           }
         } else if (snipe === true) {
-          // Display options
-          const selection = await cliSelect({
-            values: allModules,
-            selected: '✔️',
-            unSelected: '⭕️',
-            indentation: 2,
-            cleanup: true,
-            outputStream: process.stdout,
-            inputStream: process.stdin,
-            valueRenderer: (value, selected) => {
-              if (selected) {
-                return chalk.underline(chalk.green(value));
-              }
-
-              return value;
-            }
-          });
-
-          if (selection.value) {
-            const start = new Date().getTime();
-            if (!noPrompt) removingSpinner.start();
+          if (!noPrompt) {
+            const selection = await cliSelect({
+              values: allModules,
+              selected: '✔️',
+              unSelected: '⭕️',
+              indentation: 2,
+              cleanup: true,
+              outputStream: process.stdout,
+              inputStream: process.stdin,
+              valueRenderer: (value, selected) => {
+                if (selected) {
+                  return chalk.underline(chalk.green(value));
+                }
   
-            await removeModules([selection.value]);
-
-            if (!noPrompt) removingSpinner.stop();
-            const end = new Date().getTime();
-
-            if (!noPrompt) {
-              comm.success(`${nestedModules.length} deleted. [${((end - start) / 1000).toFixed(2)}s]`)
+                return value;
+              }
+            });
+  
+            if (selection.value) {
+              const start = new Date().getTime();
+              if (!noPrompt) removingSpinner.start();
+    
+              await removeModules([selection.value]);
+  
+              if (!noPrompt) removingSpinner.stop();
+              const end = new Date().getTime();
+  
+              if (!noPrompt) {
+                comm.success(`${selection.value} deleted. [${((end - start) / 1000).toFixed(2)}s]`)
+              }
+            } else {
+              process.exit();
             }
           } else {
-            process.exit();
+            await removeModules(allModules[0]);
           }
 
         }
