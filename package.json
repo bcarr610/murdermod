@@ -2,21 +2,26 @@
   "name": "murdermod",
   "version": "1.2.0",
   "description": "CLI to remove node modules.",
-  "main": "index.js",
   "bin": {
-    "murdermod": "./bin/index.js"
+    "murdermod": "./bin/murdermod.js"
   },
   "scripts": {
-    "start": "node bin/index",
-    "li": "npm i %cd% -g"
+    "li": "npm i %cd% -g",
+    "start": "node bin/murdermod.js"
   },
   "author": "Brandon Carr",
   "license": "ISC",
   "repository": "https://github.com/bcarr610/murdermod",
+  "preferGlobal": true,
   "dependencies": {
-    "colors": "^1.4.0",
+    "chalk": "^4.0.0",
+    "cli-select": "^1.1.2",
+    "clui": "^0.3.6",
+    "configstore": "^5.0.1",
     "jsonfile": "^6.0.1",
     "nodejs-fs-utils": "^1.2.5",
-    "npm-api": "^1.0.0"
+    "npm-api": "^1.0.0",
+    "progress": "^2.0.3",
+    "yargs": "^15.3.1"
   }
 }

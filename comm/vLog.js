@@ -1,0 +1,1 @@
+module.exports = (verbose, msg) => verbose && console.log(msg);
